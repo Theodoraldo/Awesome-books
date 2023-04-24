@@ -20,7 +20,7 @@ function createBooks(items) {
     books += `
       <p>${items[i].title}</p>
       <p>${items[i].author}</p>
-      <button onclick='removeItem(${i})'>Remove</button>
+      <button onclick='removeitem(${i})'>Remove</button>
       <hr />
     `;
   }
@@ -46,11 +46,12 @@ function newData(bookTitle, bookAuthor) {
 }
 
 // Removing  data from localStorage
-function removeItem(index) {
+function removeitem(index) {
   dataStore.splice(index, 1);
   updateData();
   fetchData();
 }
+removeitem(1000);
 
 // Getting stored data from localStorage
 form.onsubmit = (e) => {
