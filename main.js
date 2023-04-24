@@ -2,29 +2,17 @@ const title = document.querySelector('.title');
 const author = document.querySelector('.author');
 const form = document.querySelector('form');
 const displayBooks = document.querySelector('.container');
-
+const message = document.querySelector('span');
 // Is localStorage Empty
 if (localStorage.getItem('Book List') === null) {
   localStorage.setItem('Book List', JSON.stringify([]));
 }
-
 // Data Storage into localStorage
 const dataStore = JSON.parse(localStorage.getItem('Book List'));
-
 // localStorage data update
 function updateData() {
   localStorage.setItem('Book List', JSON.stringify(dataStore));
 }
-
-//Fetching data from localStorage
-function fetchData() {
-  displayBooks.innerHTML = `
-    <ul>
-      ${createBooks(dataStore)}
-    </ul>
-  `;
-}
-
 // Create data row
 function createBooks(items) {
   let books = '';
@@ -38,13 +26,20 @@ function createBooks(items) {
   }
   return books;
 }
-
+// Fetching data from localStorage
+function fetchData() {
+  displayBooks.innerHTML = `
+    <ul>
+      ${createBooks(dataStore)}
+    </ul>
+  `;
+}
 // Adding new data to localStorage
 function newData(bookTitle, bookAuthor) {
   const Books = {
     title: bookTitle,
     author: bookAuthor,
-  }
+  };
   dataStore.push(Books);
   updateData();
   fetchData();
@@ -60,16 +55,13 @@ function removeItem(index) {
 // Getting stored data from localStorage
 form.onsubmit = (e) => {
   if (title.value === '') {
-    alert('Please enter title of book');
-    e.preventDefault()
-  }
-  else if (author.value === '') {
-    alert('Please enter author of book');
-    e.preventDefault()
-  }
-  else {
+    message.innerHTML = 'Please enter title of book';
+    e.preventDefault();
+  } else if (author.value === '') {
+    message.innerHTML = 'Please enter author of book';
+    e.preventDefault();
+  } else {
     newData(title.value, author.value);
   }
 };
-
 window.onload = fetchData();
