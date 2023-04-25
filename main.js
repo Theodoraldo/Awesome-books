@@ -24,7 +24,7 @@ function createBooks(items) {
         <ul>
           <li>${items[i].title} by ${items[i].author}</li>
         </ul>
-        <button onclick='Removed.removeitem(${i})'>Remove</button>
+        <button onclick='NewBooks.removeitem(${i})'>Remove</button>
       </div>
       <hr/>
       `;
@@ -55,10 +55,7 @@ class NewBooks {
     updateData();
     fetchData();
   }
-}
 
-// Removing  data from localStorage using class
-class Removed {
   static removeitem(index) {
     dataStore.splice(index, 1);
     updateData();
