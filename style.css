@@ -16,3 +16,16 @@
   width: 60px;
   float: right;
 }
+
+.title-author {
+  display: inline;
+  position: relative;
+  right: 70%;
+}
+
+.btn-class {
+  display: inline-flex;
+  position: fixed;
+  right: 42vh;
+  line-height: 11px;
+}

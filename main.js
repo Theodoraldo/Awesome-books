@@ -21,8 +21,8 @@ function createBooks(items) {
   let books = '';
   for (let i = 0; i < items.length; i += 1) {
     books += `
-       <span class="title-author">${items[i].title} by ${items[i].author}</span><button onclick='removeitem(${i})'>Remove</button>
-       <hr />
+       <span class="title-author">${items[i].title} by ${items[i].author}</span><button class="btn-class" onclick='removeitem(${i})'>Remove</button>
+       <br/>
      `;
   }
   return books;
