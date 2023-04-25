@@ -24,7 +24,7 @@ function createBooks(items) {
         <ul>
           <li>${items[i].title} by ${items[i].author}</li>
         </ul>
-        <button onclick='removeitem(${i})'>Remove</button>
+        <button onclick='Removed.removeitem(${i})'>Remove</button>
       </div>
       <hr/>
       `;
@@ -57,13 +57,14 @@ class NewBooks {
   }
 }
 
-// Removing  data from localStorage
-function removeitem(index) {
-  dataStore.splice(index, 1);
-  updateData();
-  fetchData();
+// Removing  data from localStorage using class
+class Removed {
+  static removeitem(index) {
+    dataStore.splice(index, 1);
+    updateData();
+    fetchData();
+  }
 }
-removeitem(1000);
 
 // Getting stored data from localStorage
 form.onsubmit = (e) => {
