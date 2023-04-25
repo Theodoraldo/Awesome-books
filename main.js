@@ -16,14 +16,18 @@ function updateData() {
   localStorage.setItem('Book List', JSON.stringify(dataStore));
 }
 
-// Create data row
 function createBooks(items) {
   let books = '';
   for (let i = 0; i < items.length; i += 1) {
     books += `
-       <span class="title-author">${items[i].title} by ${items[i].author}</span><button class="btn-class" onclick='removeitem(${i})'>Remove</button>
-       <br/>
-     `;
+      <div class="displayRow">
+        <ul>
+          <li>${items[i].title} by ${items[i].author}</li>
+        </ul>
+        <button onclick='removeitem(${i})'>Remove</button>
+      </div>
+      <hr/>
+      `;
   }
   return books;
 }
