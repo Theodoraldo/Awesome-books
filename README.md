@@ -164,6 +164,12 @@ You can deploy this project using:
 - Twitter: [@twitterhandle](https://twitter.com/GhulamShabbir59)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ghulam-shabbir-225264247/)
 
+👤 **Theodore Osei Asimeng**
+
+- GitHub: [@githubhandle](https://github.com/Theodoraldo)
+- Twitter: [@twitterhandle](https://twitter.com/AsimengOse33947)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/theodore-asimeng-osei-80075125b/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
