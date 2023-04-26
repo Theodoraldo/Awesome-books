@@ -2,7 +2,11 @@ const title = document.querySelector('.title');
 const author = document.querySelector('.author');
 const form = document.querySelector('form');
 const displayBooks = document.querySelector('.container');
+const addForm = document.querySelector('.add-form');
+const listList = document.querySelector('.list-list');
+const contactInfo = document.querySelector('.contact-info');
 const message = document.querySelector('span');
+const selectLi = document.querySelector('.menu__items');
 
 // Is localStorage Empty
 if (localStorage.getItem('Book List') === null) {
@@ -20,11 +24,11 @@ function createBooks(items) {
   let books = '';
   for (let i = 0; i < items.length; i += 1) {
     books += `
-      <div class="displayRow">
+      <div class='displayRow'>
         <ul>
-          <li>${items[i].title} by ${items[i].author}</li>
+          <li>"${items[i].title}" by ${items[i].author}</li>
         </ul>
-        <button onclick='NewBooks.removeitem(${i})'>Remove</button>
+        <button class='remove' onclick='NewBooks.removeitem(${i})'>Remove</button>
       </div>
       <hr/>
       `;
@@ -53,7 +57,6 @@ class NewBooks {
     };
     dataStore.push(Books);
     updateData();
-    fetchData();
   }
 
   static removeitem(index) {
@@ -65,6 +68,7 @@ class NewBooks {
 
 // Getting stored data from localStorage
 form.onsubmit = (e) => {
+  e.preventDefault();
   if (title.value === '') {
     message.innerHTML = 'Please enter title of book';
     message.style.color = 'red';
@@ -78,7 +82,29 @@ form.onsubmit = (e) => {
   } else {
     const myBook = new NewBooks(title.value, author.value);
     myBook.newData();
+    title.value = '';
+    author.value = '';
+    message.innerHTML = '';
   }
 };
 
-window.onload = fetchData();
+selectLi.addEventListener('click', (e) => {
+  if (e.target.innerHTML === 'List') {
+    fetchData();
+    addForm.style.display = 'none';
+    contactInfo.style.display = 'none';
+    listList.style.display = 'block';
+  }
+  if (e.target.innerHTML === 'Add New') {
+    addForm.style.display = 'block';
+    contactInfo.style.display = 'none';
+    listList.style.display = 'none';
+  }
+  if (e.target.innerHTML === 'Contact') {
+    addForm.style.display = 'none';
+    contactInfo.style.display = 'block';
+    listList.style.display = 'none';
+  }
+});
+
+document.querySelector('body').onload = fetchData();
