@@ -57,7 +57,6 @@ class NewBooks {
     };
     dataStore.push(Books);
     updateData();
-    fetchData();
   }
 
   static removeitem(index) {
@@ -107,3 +106,5 @@ selectLi.addEventListener('click', (e) => {
     listList.style.display = 'none';
   }
 });
+
+document.querySelector('body').onload = fetchData();
