@@ -64,7 +64,7 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-https://aj193.github.io/Awesome-books/
+https://theodoraldo.github.io/Awesome-books/
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -98,7 +98,7 @@ Clone this repository to your desired folder:
 ```cd my-folder```
 
 
-```git clone https://github.com/AJ193/Awesome-books.git```
+```git clone https://github.com/Theodoraldo/Awesome-books.git```
 
 
 ### Install
@@ -115,7 +115,7 @@ Install this project with:
 ```cd my-folder```
 
 
-```git clone https://github.com/AJ193/Awesome-books.git```
+```git clone https://github.com/Theodoraldo/Awesome-books.git```
 
 
 ### Install
